@@ -15,9 +15,12 @@ alert("hello world");
 // why double then ?
 fetch("https://jsonplaceholder.typicode.com/todos")
   .then((res) => res.json())
-  .then((item) => {
+  .then((items) => {
     const todos = [];
-    todos.push(item.title);
+
+    items.forEach((item) => {
+      todos.push(item.title);
+    });
     displayData(todos);
   });
 
