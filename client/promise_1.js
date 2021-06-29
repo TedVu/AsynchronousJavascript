@@ -1,9 +1,8 @@
+// Promise is JS object with then(), put the thing you want to do after resolving promise inside then()
 const posts = [
   { title: "Post One", body: "This is a post one" },
   { title: "Post Two", body: "This is a post two" },
 ];
-
-// const fetch = require("node-fetch");
 
 function getPosts() {
   setTimeout(() => {

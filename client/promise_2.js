@@ -1,4 +1,6 @@
-const fetch = require("node-fetch");
+// there are some specialties about fetch api you have to use two .then()
+// the first .then() returns response promise object remember to convert to json
+// to get the body object
 function displayData(array) {
   let list = "<ul>";
 
@@ -9,11 +11,9 @@ function displayData(array) {
   list += "</ul>";
   document.body.innerHTML = list;
 }
-alert("hello world");
 
-// why double then ?
 fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => res.json())
+  .then((res) => alert(res.json()))
   .then((items) => {
     const todos = [];
 
